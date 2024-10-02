@@ -1,25 +1,24 @@
 {
-    "manifest_version": 3,
-    "name": "Google URL Saver",
-    "version": "1.0",
-    "description": "An extension to save URLs from Google search results.",
-    "permissions": ["activeTab", "storage", "tabs"],
-    "background": {
-      "service_worker": "background.js"
-    },
-    "content_scripts": [
-      {
-        "matches": ["*://www.google.com/search*"],
-        "js": ["content.js"]
-      }
-    ],
-    "action": {
-      "default_popup": "popup.html",
-      "default_icon": {
-        "16": "icons/icon16.png",
-        "48": "icons/icon48.png",
-        "128": "icons/icon128.png"
-      }
+  "manifest_version": 3,
+  "name": "URLGuardian",
+  "version": "1.1",
+  "description": "An extension to safeguard users by saving and checking URLs from all websites to detect phishing attacks.",
+  "permissions": ["activeTab", "storage", "tabs", "webNavigation", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
     }
   }
-  
+}
